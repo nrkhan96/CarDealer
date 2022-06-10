@@ -62,7 +62,8 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "car")
-        {
+        {            
+            GetComponent<Player>().AddValueText(other.GetComponent<Car>().value);
             allCars.Add(other.transform);
         }
     }
